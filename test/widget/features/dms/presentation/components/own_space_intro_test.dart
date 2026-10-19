@@ -1,4 +1,3 @@
-import 'package:zedu/core/core.dart';
 import 'package:zedu/features/features.dart';
 
 import '../../../../../helpers/helpers.dart';
@@ -46,7 +45,8 @@ void main() {
       await _pumpIntro(tester);
 
       final text = tester.widget<Text>(find.text(_intro));
-      final first = text.textSpan!.children!.first as TextSpan;
+      final span = text.textSpan! as TextSpan;
+      final first = span.children!.first as TextSpan;
 
       expect(first.text, 'Only you can see this.');
       expect(first.style!.fontWeight, FontWeight.w600);
